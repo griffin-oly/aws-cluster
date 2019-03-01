@@ -12,4 +12,13 @@ https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-02-11/amazon-e
 # 
 curl https://raw.githubusercontent.com/griffin-oly/aws-cluster/master/olympus-eks-nodegroup.yaml -o olympus-eks-nodegroup.yaml
 
+# 
+aws eks --region us-east-1 update-kubeconfig --name Olympus1
 
+
+# aws eks --region region describe-cluster --name devel --query cluster.status
+aws eks --region us-east-1 describe-cluster --name Olympus1 --query cluster.status
+
+Retrieve the endpoint:
+# aws eks --region region describe-cluster --name devel  --query cluster.endpoint --output text
+aws eks --region us-east-1 describe-cluster --name Olympus1 --query cluster.endpoint --output text

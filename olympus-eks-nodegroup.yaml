@@ -6,7 +6,8 @@ Parameters:
 
   KeyName:
     Description: The EC2 Key Pair to allow SSH access to the instances
-    Type: AWS::EC2::KeyPair::KeyName
+    # Type: AWS::EC2::KeyPair::KeyName
+    Type: AWS::EC2::KeyPair::loc_ansible
 
   NodeImageId:
     Description: AMI id for the node instances.
@@ -113,12 +114,12 @@ Parameters:
   NodeAutoScalingGroupDesiredCapacity:
     Description: Desired capacity of Node Group ASG.
     Type: Number
-    Default: 3
+    Default: 2
 
   NodeVolumeSize:
     Description: Node volume size
     Type: Number
-    Default: 30
+    Default: 40
 
   ClusterName:
     Description: The cluster name provided when the cluster was created. If it is incorrect, nodes will not be able to join the cluster.
